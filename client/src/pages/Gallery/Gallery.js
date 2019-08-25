@@ -4,6 +4,7 @@ const Gallery = () => {
 
     return (
         <div>
+            this is gallery
             
         </div>
     );

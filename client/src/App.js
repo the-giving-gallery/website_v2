@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //  Components
 // =====================================================
 import NavBar from "./components/Navigation/NavBar"
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Gallery from "./pages/Gallery"
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Gallery from "./pages/Gallery/Gallery"
 
 
 function App() {
