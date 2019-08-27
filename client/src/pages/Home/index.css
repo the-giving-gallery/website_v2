@@ -1,26 +1,29 @@
+.hero{
+      /* Sizing */
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
 
-
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiW0Nbahp_kAhW2FzQIHfc7BAoQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Fwww.seekpng.com%252Fipng%252Fu2q8y3o0y3e6y3y3_splatter-clipart-maroon-paint-maroon-brush-stroke%252F%26psig%3DAOvVaw3-YSycLrkJIPA4_tXkknWC%26ust%3D1566857421639866&psig=AOvVaw3-YSycLrkJIPA4_tXkknWC&ust=1566857421639866");
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+      
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      
+      /* Flexbox stuff */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      /* Text styles */
+      text-align: center;
+      color: white;
 }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: red;
+button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.actionBtn {
+  margin-top: 10px;
 }

@@ -29,7 +29,7 @@ function NavBar() {
                             <NavLink className="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Partners</NavLink>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <NavLink className="dropdown-item" to="/partners/non-profits">Non-Profits</NavLink>
+                                <NavLink className="dropdown-item" to="/partners/nonprofits">Non-Profits</NavLink>
                                 <NavLink className="dropdown-item" to="/partners/artists">Artists</NavLink>
                             </div>
                         </li>

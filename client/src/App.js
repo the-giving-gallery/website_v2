@@ -7,6 +7,8 @@ import NavBar from "./components/Navigation/NavBar"
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Gallery from "./pages/Gallery/Gallery"
+import NonProfits from './pages/Partners/NonProfits';
+import Artists from "./pages/Partners/Artists";
 
 
 function App() {
@@ -19,7 +21,10 @@ function App() {
 
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route patt="/gallery" component={Gallery}/>
+          <Route path="/gallery" component={Gallery}/>
+          <Route path="/partners/nonprofits" component={NonProfits}/>
+          <Route path="/partners/artists" component={Artists}/>
+
         </Switch>
 
       </div>
