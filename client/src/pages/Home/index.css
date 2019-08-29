@@ -1,0 +1,44 @@
+.hero{
+      /* Sizing */
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+
+      
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      
+      /* Flexbox stuff */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      /* Text styles */
+      text-align: center;
+      color: white;
+}
+
+button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.actionBtn {
+  margin-top: 10px;
+}
+.soldArt {
+  width: 200px;
+  margin: 10px;
+}
+.soldArtArtist {
+  margin-bottom: 0px;
+}
+.soldArtPrice{
+  font-style: italic;
+}
+.soldArtName {
+  font-weight: 550;
+  margin-bottom: 10px;
+  color: rgb(136,136,136);
+}
