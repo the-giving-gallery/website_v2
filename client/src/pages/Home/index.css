@@ -31,3 +31,14 @@ button {
   width: 200px;
   margin: 10px;
 }
+.soldArtArtist {
+  margin-bottom: 0px;
+}
+.soldArtPrice{
+  font-style: italic;
+}
+.soldArtName {
+  font-weight: 550;
+  margin-bottom: 10px;
+  color: rgb(136,136,136);
+}

@@ -40,8 +40,22 @@ function Home() {
         <hr></hr>
       </div>
       <div className="container" id="soldArt">
-        <h1>sold art</h1>
-        {SoldArt.map(image => <img src={image.url} alt="sold artwork" className="soldArt" key={image.id}></img>)}
+        <h3>Recently Sold Artwork</h3>
+        <div className="row">
+
+          {SoldArt.map(
+            image =>
+              <div className="card border-0">
+                <img src={image.url} alt="sold artwork" className="soldArt" key={image.id}></img>
+                <p className="soldArtName">{image.name}</p>
+                <span>
+                  <p className="soldArtArtist">{image.artist}</p>
+                  <p className="soldArtPrice">{image.price}</p>
+                </span>
+
+              </div>
+          )}
+        </div>
       </div>
 
 
