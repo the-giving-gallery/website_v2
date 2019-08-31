@@ -1,3 +1,27 @@
-.footerCol {
+.footerHeader {
     color: maroon;
 }
+.column {
+    width: 20%;
+}
+#joinHeader {
+    font-size: 9px;
+}
+
+.fab {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  .fa-facebook {
+    color:#3b5998;
+  }
+  .fa-twitter {
+    color: #38A1F3;
+  }
+  .fa-instagram {
+      color: #e4405f;
+  }
