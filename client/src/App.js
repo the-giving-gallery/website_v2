@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //  Components
 // =====================================================
 import NavBar from "./components/Navigation/NavBar"
+import Footer from "./components/Footer/Footer"
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Gallery from "./pages/Gallery/Gallery"
@@ -28,6 +29,7 @@ function App() {
         </Switch>
 
       </div>
+      <Footer></Footer>
     </Router>
 
 

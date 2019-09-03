@@ -9,8 +9,10 @@ function NavBar() {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light container">
-                {/* src='/utils/images/TGGLogo-monogram-inline-color-maroon-1.png' for img  */}
-                <NavLink className="col-md-8" id="brand" to="/">The Giving Gallery</NavLink>
+                <div className="col-md-7">
+
+                    <NavLink id="brand" to="/">The Giving Gallery</NavLink>
+                </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -20,20 +22,35 @@ function NavBar() {
                             <NavLink className="nav-link" to="/gallery">Gallery <span className="sr-only">(current)</span></NavLink>
                         </li>
                         <li className="nav-item">
+                            <NavLink className="nav-link active" to="/partners/nonprofits">Non-Profits</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link active" to="/partners/artists">Artists</NavLink>
+                        </li>
+                        <li className="nav-item">
                             <NavLink className="nav-link active" to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link active" to="/signin">Sign In</NavLink>
                         </li>
-                        <li className="nav-item dropdown">
-                            <NavLink className="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Partners</NavLink>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <NavLink className="dropdown-item" to="/partners/nonprofits">Non-Profits</NavLink>
-                                <NavLink className="dropdown-item" to="/partners/artists">Artists</NavLink>
-                            </div>
-                        </li>
                     </ul>
+                    <ul id="socialList">
+                    <li>
+                        <a href="https://www.facebook.com/thegivinggallery/" target="_blank" rel="noopener noreferrer">
+                            <i class="navFab fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/thegivinggallery/" target="_blank" rel="noopener noreferrer">
+                            <i class="navFab fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/givinggallery" target="_blank" rel="noopener noreferrer">
+                            <i class="navFab fab fa-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
                 </div>
             </nav>
         </>
