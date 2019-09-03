@@ -1,13 +1,12 @@
 .footerHeader {
     color: maroon;
 }
-.column {
+/* .column {
     width: 20%;
-}
+} */
 #joinHeader {
-    font-size: 9px;
+    font-size: 10px;
 }
-
 .footerFab {
     padding: 20px;
     font-size: 30px;
@@ -24,4 +23,17 @@
   }
   .fa-instagram {
       color: #e4405f;
+  }
+  li {
+    list-style: none;
+  }
+  .fa-caret-right{
+    font-size: 12px;
+  }
+  .navlink {
+    color: rgb(40,40,40);
+    font-size: 14px;
+  }
+  .navlink:hover{
+    color: rgb(128,128,128);
   }

@@ -6,36 +6,76 @@ export default function Footer() {
     return (
         <>
             <div className="container">
-                <hr></hr>
+            <hr></hr>
                 <div className="row">
-                    <div className="column">
+                    <div className="col-sm">
                         <h5 className="footerHeader">
                             About Us
                         </h5>
                         <ul>
                             <li>
-                                <NavLink to="/about">
-                                    <span>About</span>
+                                <NavLink className="navlink text-decoration-none" to="/about">
+                                    <i class="fas fa-caret-right"></i> About
                                 </NavLink>
                             </li>
                         </ul>
                     </div>
-                    <div className="column">
+                    <div className="col-sm">
                         <h5 className="footerHeader">
                             Non-Profits
                         </h5>
+                        <ul>
+                            <li>
+                                <NavLink className="navlink text-decoration-none" to="/partners/nonprofits">
+                                    <i class="fas fa-caret-right"></i> Non-Profits
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
-                    <div className="column">
+                    <div className="col-sm">
                         <h5 className="footerHeader">
                             Artists
                         </h5>
+                        <ul>
+                            <li>
+                                <NavLink className="navlink text-decoration-none" to="/partners/artists">
+                                    <i class="fas fa-caret-right"></i> Artists
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="navlink text-decoration-none" to="/gallery">
+                                    <i class="fas fa-caret-right"></i> Gallery
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
-                    <div className="column">
+                    <div className="col-sm">
                         <h5 className="footerHeader">
                             Resources
                         </h5>
+                        <ul>
+                            <li>
+                                <NavLink className="navlink text-decoration-none" to="/">
+                                    <i class="fas fa-caret-right"></i> How-To Sell Art
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="navlink text-decoration-none" to="/">
+                                    <i class="fas fa-caret-right"></i> Artist Tools
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="navlink text-decoration-none" to="/">
+                                    <i class="fas fa-caret-right"></i> Artist Terms of Service
+                                </NavLink>
+                            </li>  <li>
+                                <NavLink className="navlink text-decoration-none" to="/">
+                                    <i class="fas fa-caret-right"></i> Purchaser Terms of Service
+                                </NavLink>
+                            </li>
+                        </ul>
                     </div>
-                    <div className="column">
+                    <div className="col-sm">
                         <h5 className="footerHeader">
                             Follow Us!
                          </h5>
@@ -51,7 +91,7 @@ export default function Footer() {
                         <div>
                             <label id="joinHeader" for="join">Join Our Newsletter</label>
                             <input id="join"></input>
-                            <button type="submit" value="Submit">Submit</button>
+                            <button class="btn m-2" type="submit" value="Submit">Submit</button>
                         </div>
                     </div>
                 </div>
