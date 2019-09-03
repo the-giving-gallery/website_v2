@@ -7,3 +7,15 @@ nav {
 #brand {
 color: maroon;
 }
+.navFab {
+font-size: 14px;
+margin: 4px;
+}
+#socialList li{
+    list-style: none;
+    display: inline;
+}
+#socialList {
+    padding: 0px;
+    margin: 0px;
+}

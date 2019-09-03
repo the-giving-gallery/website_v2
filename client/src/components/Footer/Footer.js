@@ -40,13 +40,13 @@ export default function Footer() {
                             Follow Us!
                          </h5>
                         <a href="https://www.facebook.com/thegivinggallery/" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook"></i>
+                            <i class="footerFab fab fa-facebook"></i>
                         </a>
                         <a href="https://www.instagram.com/thegivinggallery/" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram"></i>
+                            <i class="footerFab fab fa-instagram"></i>
                         </a>
                         <a href="https://twitter.com/givinggallery" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter"></i>
+                            <i class="footerFab fab fa-twitter"></i>
                         </a>
                         <div>
                             <label id="joinHeader" for="join">Join Our Newsletter</label>
