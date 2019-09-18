@@ -31,10 +31,10 @@ export default class SignIn extends React.Component {
         <Container>
           <Row id="choiceHeader">
             <Col onClick={this.handleSignIn}>
-              <h4 className={"header " + (this.state.isLoginOpen ? "selectedHeader" : "")}>Sign In</h4>
+              <h4 className={"selectHeader " + (this.state.isLoginOpen ? "selected" : "")}>Sign In</h4>
             </Col>
             <Col onClick={this.handleRegister}>
-              <h4 className={"header " + (this.state.isRegisterOpen ? "selectedHeader" : "")}>Register</h4>
+              <h4 className={"selectHeader " + (this.state.isRegisterOpen ? "selected" : "")}>Register</h4>
             </Col>
           </Row>
           <Row>
