@@ -8,8 +8,8 @@ export default class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoginOpen: true,
-      isRegisterOpen: false
+      isLoginOpen: false,
+      isRegisterOpen: true
     }
   }
   handleSignIn = () => {
@@ -31,13 +31,16 @@ export default class SignIn extends React.Component {
         <Container>
           <Row id="choiceHeader">
             <Col onClick={this.handleSignIn}>
-              <h2 className="header">Sign In</h2>
+              <h4 className={"header " + (this.state.isLoginOpen ? "selectedHeader" : "")}>Sign In</h4>
             </Col>
             <Col onClick={this.handleRegister}>
-              <h2 className="header">Register</h2>
+              <h4 className={"header " + (this.state.isRegisterOpen ? "selectedHeader" : "")}>Register</h4>
             </Col>
           </Row>
-          {this.state.isLoginOpen === true ? <SignInForm/> : <RegisterFrom></RegisterFrom>}
+          <Row>
+
+            {this.state.isLoginOpen === true ? <SignInForm /> : <RegisterFrom></RegisterFrom>}
+          </Row>
         </Container>
       </>
     );

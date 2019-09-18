@@ -34,55 +34,64 @@ class RegisterForm extends React.Component {
         return (
             <>
                 <Container id="container">
-                    <Row id="registerForm">
-                        <Form >
-                            <Col>
-                                <FormGroup id="nameGroup">
-                                    <Label >First Name</Label>
-                                    <Input
-                                        type="text"
-                                        name="firstName"
-                                        id="firstName"
-                                        placeholder="First Name"
-                                        onChange={this.handleInputChange}
-                                    />
-                                    <Label >Last Name</Label>
-                                    <Input
-                                        type="text"
-                                        name="lastName"
-                                        id="lastName"
-                                        placeholder="Last Name"
-                                        onChange={this.handleInputChange}
-                                    />
-                                </FormGroup>
-                            </Col>
-                            <Col>
-                                <FormGroup >
-                                    <Label id="emailGroup">Email</Label>
-                                    <Input
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        placeholder="youremail@email.com"
-                                        onChange={this.handleInputChange}
-                                    />
-                                </FormGroup>
-                            </Col>
-                            <Col>
-                                <FormGroup >
-                                    <Label for="password">Password</Label>
-                                    <Input
-                                        type="password"
-                                        name="password"
-                                        id="password"
-                                        placeholder="********"
-                                        onChange={this.handleInputChange}
-                                    />
-                                </FormGroup>
-                            </Col>
-                            <Button onClick={this.handleSubmit} className="m-4">Submit</Button>
-                        </Form>
-                    </Row>
+                    <div className="registerForm">
+
+                        <Row id="rowHeader" >
+                        <h5 id="createHeader">
+                                Create Account
+                        </h5>
+                        </Row>
+                        <hr></hr>
+                        <Row >
+                            <Form >
+                                <Col>
+                                    <FormGroup id="nameGroup">
+                                        <Label >First Name</Label>
+                                        <Input
+                                            type="text"
+                                            name="firstName"
+                                            id="firstName"
+                                            placeholder="First Name"
+                                            onChange={this.handleInputChange}
+                                        />
+                                        <Label >Last Name</Label>
+                                        <Input
+                                            type="text"
+                                            name="lastName"
+                                            id="lastName"
+                                            placeholder="Last Name"
+                                            onChange={this.handleInputChange}
+                                        />
+                                    </FormGroup>
+                                </Col>
+                                <Col>
+                                    <FormGroup >
+                                        <Label id="emailGroup">Email</Label>
+                                        <Input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            placeholder="youremail@email.com"
+                                            onChange={this.handleInputChange}
+                                        />
+                                    </FormGroup>
+                                </Col>
+                                <Col>
+                                    <FormGroup >
+                                        <Label for="password">Password</Label>
+                                        <Input
+                                            type="password"
+                                            name="password"
+                                            id="password"
+                                            placeholder="********"
+                                            onChange={this.handleInputChange}
+                                        />
+                                    </FormGroup>
+                                </Col>
+                                <Button onClick={this.handleSubmit} className="m-4">Submit</Button>
+                            </Form>
+                        </Row>
+                    </div>
                 </Container>
             </>
         );
