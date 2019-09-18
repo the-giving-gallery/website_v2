@@ -1,0 +1,12 @@
+#choiceHeader {
+    border: 1px solid gray;    
+    width: 50%;
+    margin : 0 auto;
+}
+.header {
+    text-align: left;
+    border-bottom: 2px solid blue;
+    width: 50%;
+    padding: 4px; 
+    margin-bottom: 20px;
+}

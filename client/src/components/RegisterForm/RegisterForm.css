@@ -1,0 +1,9 @@
+#registerForm {
+    border: 1px solid gray;
+    width: 50%;
+    margin : 0 auto;
+}
+#container {
+    padding: 20px;
+    height: 70vh;
+}

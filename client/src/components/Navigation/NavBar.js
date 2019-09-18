@@ -37,17 +37,17 @@ function NavBar() {
                     <ul id="socialList">
                     <li>
                         <a href="https://www.facebook.com/thegivinggallery/" target="_blank" rel="noopener noreferrer">
-                            <i class="navFab fab fa-facebook"></i>
+                            <i className="navFab fab fa-facebook"></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/thegivinggallery/" target="_blank" rel="noopener noreferrer">
-                            <i class="navFab fab fa-instagram"></i>
+                            <i className="navFab fab fa-instagram"></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://twitter.com/givinggallery" target="_blank" rel="noopener noreferrer">
-                            <i class="navFab fab fa-twitter"></i>
+                            <i className="navFab fab fa-twitter"></i>
                         </a>
                     </li>
                 </ul>
