@@ -1,0 +1,9 @@
+#signInForm {
+    width: 50%;
+    margin : 0 auto;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(15, 15, 15, 0.2);
+    box-shadow: 0px 0px 20px 0px rgba(15, 15, 15, 0.2);
+}
+#container {
+    padding: 20px;
+}
