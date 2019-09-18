@@ -17,21 +17,21 @@ function NavBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
-                        <li className="nav-item active">
-                            <NavLink className="nav-link" to="/gallery">Gallery <span className="sr-only">(current)</span></NavLink>
+                    <ul className="navbar-nav" id="listMain">
+                        <li className="nav-item  active">
+                            <NavLink className="nav-link navList" to="/gallery">Gallery <span className="sr-only">(current)</span></NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" to="/partners/nonprofits">Non-Profits</NavLink>
+                        <li className="nav-item ">
+                            <NavLink className="nav-link navList active" to="/partners/nonprofits">Non-Profits</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" to="/partners/artists">Artists</NavLink>
+                        <li className="nav-item ">
+                            <NavLink className="nav-link navList active" to="/partners/artists">Artists</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" to="/about">About</NavLink>
+                        <li className="nav-item ">
+                            <NavLink className="nav-link navList active" to="/about">About</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" to="/signin">Sign In</NavLink>
+                        <li className="nav-item ">
+                            <NavLink className="nav-link navList active" to="/signin">Sign In</NavLink>
                         </li>
                     </ul>
                     <ul id="socialList">

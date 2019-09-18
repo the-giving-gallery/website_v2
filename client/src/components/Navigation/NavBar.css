@@ -1,20 +1,24 @@
 nav {
-    border-style: none none solid none;
-    border-width: 0.5px;
-    border-color: lightslategrey;
+    border-bottom: 0.5px solid lightslategrey; 
     height: 60px;
 }
 #brand {
 color: maroon;
 }
+.nav-item {
+    padding: auto;
+}
+.nav-item:hover {
+    border-bottom: 2px solid #3399FF;
+}
 .navFab {
-font-size: 14px;
-margin: 4px;
+    font-size: 14px;
+    margin: 4px;
 }
 #socialList li{
-    list-style: none;
     display: inline;
 }
+
 #socialList {
     padding: 0px;
     margin: 0px;
