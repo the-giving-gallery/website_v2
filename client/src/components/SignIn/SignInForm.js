@@ -5,6 +5,7 @@ import {
     Button, Row
 } from 'reactstrap';
 import './SignInForm.css';
+import axios from "axios"
 
 class SignInForm extends React.Component {
     constructor(props) {
@@ -25,6 +26,11 @@ class SignInForm extends React.Component {
             email: "",
             password: "",
         })
+        axios.get("/api/user")
+            .then(res => {
+                console.log(res.data)
+                console.log("success")
+            })
     }
     handleSignIn = () => {
         this.setState({
