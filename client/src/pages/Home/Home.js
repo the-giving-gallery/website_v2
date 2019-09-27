@@ -18,7 +18,7 @@ function Home() {
       </div>
       <div id="callToAction" className="container">
         <div className="row text-center">
-          <h2 className="col-md-12 mt-5">Buy or sell art that supports mental health nonprofits.</h2>
+          <h3 className="col-md-12 mt-5">Buy or sell art that supports mental health nonprofits.</h3>
 
         </div>
         <div className="row text-center mt-5 mb-5">
@@ -55,6 +55,23 @@ function Home() {
 
               </div>
           )}
+        </div>
+      </div>
+      <div className="container">
+        <hr></hr>
+        <div className="row text-center">
+          <h3 className="col-md-12">
+            Hear from our artist advocates
+          </h3>
+        </div>
+        <div className="row">
+          <div className="col-md-6">
+            <iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/UHjyN5fhN0M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div className="col-md-6">
+            <iframe title="youtube2" width="560" height="315" src="https://www.youtube.com/embed/nAUFzWNS7Zs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
         </div>
       </div>
 
