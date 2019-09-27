@@ -26,7 +26,7 @@ class SignInForm extends React.Component {
             email: "",
             password: "",
         })
-        axios.get("/api/user")
+        axios.get("/api/test/GET")
             .then(res => {
                 console.log(res.data)
                 console.log("success")
