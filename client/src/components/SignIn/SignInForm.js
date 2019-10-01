@@ -54,7 +54,7 @@ class SignInForm extends React.Component {
             <>
                 <Container id="container">
                     <Row id="signInForm">
-                        <Form >
+                        <Form action="/login" method="post">
                             <Col>
                                 <FormGroup >
                                     <Label id="emailGroup">Email</Label>

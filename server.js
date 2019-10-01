@@ -3,8 +3,6 @@ const express = require("express");
 
 const routes = require("./routes");
 const database = require("./models");
-
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -16,7 +14,6 @@ app.use(routes);
 //     res.sendFile(path.join(__dirname, "/client/public/index.html"));
 // });
 
-
 database
     .sequelize
     .sync()
@@ -25,3 +22,4 @@ database
             console.log(`🌎=>> Server now on Port ${PORT}`)
         })
     })
+
