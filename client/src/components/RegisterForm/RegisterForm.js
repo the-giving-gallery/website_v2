@@ -37,7 +37,7 @@ class RegisterForm extends React.Component {
                     <div className="registerForm">
 
                         <Row id="rowHeader" >
-                        <h5 id="createHeader">
+                            <h5 id="createHeader">
                                 Create Account
                         </h5>
                         </Row>

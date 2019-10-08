@@ -1,4 +1,9 @@
 const db = require('../models')
+const { registerValidation } = require("../validation");
+// const Joi = require('@hapi/joi');
+
+
+
 
 module.exports = {
 
@@ -9,14 +14,14 @@ module.exports = {
             }
         }).then(dbUser => res.send(dbUser))
     },
-    // findUser: function (req, res) {
-    //     db.User.findOne({
-    //         where: {
-    //             username: req.params.username
-    //         }
-    //     }).then(dbUser => res.send(dbUser))
-    // },
+
+
     createNewUser: async function (req, res) {
+        // Validate user registeration input
+        const { error } = registerValidation(req.body);
+        if (error) return res.status(400).send(error.details[0].message);
+        
+        // Find username/email if it already exists
         const usernameExist = await db.User.findOne({
             where: {
                 username: req.body.username
@@ -29,6 +34,8 @@ module.exports = {
             }
         })
         if(emailExist) return res.status(400).send("email is already taken")
+
+        // Create new user
         db.User.create({
             username: req.body.username,
             firstname: req.body.firstname,
