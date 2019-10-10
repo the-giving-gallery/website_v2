@@ -1,6 +1,6 @@
 const db = require('../models')
-const { registerValidation } = require("../validation");
-// const Joi = require('@hapi/joi');
+const { registerValidation, loginValidation } = require("../validation");
+const bcrypt = require("bcrypt");
 
 
 
@@ -20,20 +20,25 @@ module.exports = {
         // Validate user registeration input
         const { error } = registerValidation(req.body);
         if (error) return res.status(400).send(error.details[0].message);
-        
+
         // Find username/email if it already exists
         const usernameExist = await db.User.findOne({
             where: {
                 username: req.body.username
             }
         })
-        if(usernameExist) return res.status(400).send("username is already taken")
+        if (usernameExist) return res.status(400).send("username is already taken")
+
         const emailExist = await db.User.findOne({
             where: {
                 email: req.body.email
             }
         })
-        if(emailExist) return res.status(400).send("email is already taken")
+        if (emailExist) return res.status(400).send("email is already taken")
+        // Hash password
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
         // Create new user
         db.User.create({
@@ -41,9 +46,27 @@ module.exports = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: req.body.password,
+            password: hashedPassword,
         }).then(user => {
-            res.send(user)
+            res.send({ user: user.id })
         })
+    },
+
+    loginUser: async function (req, res) {
+        const { error } = loginValidation(req.body);
+        if (error) return res.status(400).send(error.details[0].message);
+        // check if email is in the database
+        const user = await db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        if (!user) return res.status(400).send("email is incorrect")
+
+        // Password compare
+        const validPassword = await bcrypt.compare(req.body.password, user.password)
+        if(!validPassword) return res.status(400).send("invalid password");
+
+        res.send("logged in")
     }
 }

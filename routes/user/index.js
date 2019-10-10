@@ -1,13 +1,14 @@
 const path = require("path");
 const router = require("express").Router();
 // const auth = require("./auth");
-const registerUser = require("./register");
+const registerUser = require("./user");
 
 
 // API Routes
 
 // router.use("/auth", auth);
 router.use("/register", registerUser)
+router.use("/login", registerUser)
 
 
 // If no API routes are hit, send the React app

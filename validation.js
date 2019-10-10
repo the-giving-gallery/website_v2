@@ -3,15 +3,8 @@ const Joi = require('@hapi/joi');
 
 const registerValidation = data => {
     const schema = Joi.object({
-        // email: Joi.string()
-        //     .min(5)
-        //     .required()
-        //     .email(),
-        // password: Joi.string()
-        //     .required()
-        //     .min(6)
         username: Joi.string()
-            .min(5)
+            .max(30)
             .required(),
         firstname: Joi.string()
             .max(30)
@@ -24,7 +17,7 @@ const registerValidation = data => {
             .required()
             .email(),
         password: Joi.string()
-            .required()
+            .pattern(/^[a-zA-Z0-9]{6,30}$/)
             .min(6)
     })
     return schema.validate(data)
@@ -32,15 +25,16 @@ const registerValidation = data => {
 
 const loginValidation = data => {
 
-    const schema = {
+    const schema = Joi.object({
         email: Joi.string()
             .min(5)
             .required()
             .email(),
         password: Joi.string()
-            .pattern(/^[a-zA-Z0-9]{3,30}$/)
-    }
-    return Joi.validate(data, schema);
+            .pattern(/^[a-zA-Z0-9]{6,30}$/)
+            .min(6)
+    })
+    return schema.validate(data)
 }
 
 module.exports.registerValidation = registerValidation;
