@@ -7,8 +7,9 @@ const registerUser = require("./user");
 // API Routes
 
 // router.use("/auth", auth);
-router.use("/register", registerUser)
-router.use("/login", registerUser)
+router.use("/POST", registerUser)
+router.use("/GET", registerUser)
+// router.use("/login", registerUser)
 
 
 // If no API routes are hit, send the React app

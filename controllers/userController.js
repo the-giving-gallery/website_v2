@@ -1,6 +1,8 @@
 const db = require('../models')
 const { registerValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+// const verify = require("../routes/verifyToken")
 
 
 
@@ -63,10 +65,16 @@ module.exports = {
         })
         if (!user) return res.status(400).send("email is incorrect")
 
-        // Password compare
+        // Compare password
         const validPassword = await bcrypt.compare(req.body.password, user.password)
         if(!validPassword) return res.status(400).send("invalid password");
 
-        res.send("logged in")
+
+        // Get jwt token
+        const token = jwt.sign({id: user.id}, process.env.TOKEN_SECRET)
+        res.header("auth-token", token).send(token)
+    },
+    jwtRoute: async function (req, res){
+        res.send(req.user)
     }
 }
