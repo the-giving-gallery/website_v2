@@ -8,8 +8,8 @@ export default class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoginOpen: false,
-      isRegisterOpen: true
+      isLoginOpen: true,
+      isRegisterOpen: false
     }
   }
   handleSignIn = () => {

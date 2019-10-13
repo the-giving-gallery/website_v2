@@ -5,8 +5,8 @@
       object-fit: cover;
 
       
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
-      background-size: cover;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)), url('/utils/images/cityScape.jpeg');
+      background-size: 100% 100%;
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -19,6 +19,14 @@
       /* Text styles */
       text-align: center;
       color: white;
+}
+h3 {
+  color: maroon;
+  font-weight: 300;
+
+}
+iframe{
+  margin: 50px 0px 50px 0px;
 }
 
 button {
