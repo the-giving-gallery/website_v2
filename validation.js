@@ -3,9 +3,6 @@ const Joi = require('@hapi/joi');
 
 const registerValidation = data => {
     const schema = Joi.object({
-        username: Joi.string()
-            .max(30)
-            .required(),
         firstname: Joi.string()
             .max(30)
             .required(),
