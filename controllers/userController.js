@@ -2,7 +2,7 @@ const db = require('../models')
 const { registerValidation, loginValidation } = require("../validation");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-// const verify = require("../routes/verifyToken")
+const verify = require("../routes/verifyToken")
 
 
 
@@ -24,12 +24,6 @@ module.exports = {
         if (error) return res.status(400).send(error.details[0].message);
 
         // Find username/email if it already exists
-        const usernameExist = await db.User.findOne({
-            where: {
-                username: req.body.username
-            }
-        })
-        if (usernameExist) return res.status(400).send("username is already taken")
 
         const emailExist = await db.User.findOne({
             where: {
@@ -44,7 +38,6 @@ module.exports = {
 
         // Create new user
         db.User.create({
-            username: req.body.username,
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
@@ -67,14 +60,19 @@ module.exports = {
 
         // Compare password
         const validPassword = await bcrypt.compare(req.body.password, user.password)
-        if(!validPassword) return res.status(400).send("invalid password");
+        if (!validPassword) return res.status(400).send("invalid password");
 
 
         // Get jwt token
-        const token = jwt.sign({id: user.id}, process.env.TOKEN_SECRET)
+        const token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET)
         res.header("auth-token", token).send(token)
     },
-    jwtRoute: async function (req, res){
+    posts: async function (req, res) {
+        // db.User.findOne({
+        //     where: {
+        //         id: req.body
+        //     }
+        // }).then(dbUser => res.send(dbUser))
         res.send(req.user)
     }
 }
