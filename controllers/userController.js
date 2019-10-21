@@ -18,10 +18,10 @@ module.exports = {
     },
 
 
-    createNewUser: async function (req, res) {
+    register: async function (req, res) {
         // Validate user registeration input
         const { error } = registerValidation(req.body);
-        if (error) return res.status(400).send(error.details[0].message);
+        if (error) return res.json(error.details[0].message);
 
         // Find username/email if it already exists
 
@@ -30,20 +30,20 @@ module.exports = {
                 email: req.body.email
             }
         })
-        if (emailExist) return res.status(400).send("email is already taken")
-        // Hash password
+        if (emailExist) return res.status(400)
+        // // Hash password
 
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(req.body.password, salt);
+        // const salt = await bcrypt.genSalt(10);
+        // const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
         // Create new user
         db.User.create({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             email: req.body.email,
-            password: hashedPassword,
+            password: req.body.password,
         }).then(user => {
-            res.send({ user: user.id })
+            res.json({ user: user.id })
         })
     },
 
@@ -67,12 +67,12 @@ module.exports = {
         const token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET)
         res.header("auth-token", token).send(token)
     },
-    posts: async function (req, res) {
+    // posts: async function (req, res) {
         // db.User.findOne({
         //     where: {
         //         id: req.body
         //     }
         // }).then(dbUser => res.send(dbUser))
-        res.send(req.user)
-    }
+        // res.send(req.user)
+    // }
 }

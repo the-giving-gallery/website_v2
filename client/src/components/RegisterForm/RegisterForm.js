@@ -5,14 +5,16 @@ import {
     Button, Row
 } from 'reactstrap';
 import './RegisterForm.css';
+import axios from "axios";
 
 class RegisterForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            firstName: "",
+            lastName: "",
             email: "",
             password: "",
-            name: "",
         }
     }
     handleInputChange = (e) => {
@@ -20,12 +22,26 @@ class RegisterForm extends React.Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({
-            email: "",
-            password: "",
-            name: "",
+        const route = "/user/POST/register";
+        const data = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            password: this.state.password,
+        }
+        axios.post(route, data)
+            .then(function (res) {
+                // this.setState({
+                //     fistName: "",
+                //     lastName: "",
+                //     email: "",
+                //     password: "",
+                // })
+                console.log(res)
+            }).catch(function (error) {
+                console.log(error);
+            });
 
-        })
     }
 
 

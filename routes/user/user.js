@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
-const verify = require("../verifyToken")
+// const verify = require("../verifyToken")
 
-// Matches with "/api/equipment"
-router.route("/register").post(userController.createNewUser);
+// Routes from /user
+router.route("/register").post(userController.register);
 router.route("/login").post(userController.loginUser);
-router.route("/posts").get(verify, userController.posts)
+// router.route("/posts").get(verify, userController.posts)
 
 
 module.exports = router;
