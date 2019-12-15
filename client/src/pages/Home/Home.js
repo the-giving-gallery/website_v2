@@ -66,10 +66,10 @@ function Home() {
         </div>
         <div className="row">
           <div className="col-md-6">
-            <iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/UHjyN5fhN0M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/UHjyN5fhN0M" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
           <div className="col-md-6">
-            <iframe title="youtube2" width="560" height="315" src="https://www.youtube.com/embed/nAUFzWNS7Zs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe title="youtube2" width="560" height="315" src="https://www.youtube.com/embed/nAUFzWNS7Zs" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
 
         </div>

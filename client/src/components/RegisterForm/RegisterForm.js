@@ -29,7 +29,7 @@ class RegisterForm extends React.Component {
             email: this.state.email,
             password: this.state.password,
         }
-        axios.post(route, data)
+        axios.post(route, {data})
             .then(function (res) {
                 // this.setState({
                 //     fistName: "",
@@ -37,7 +37,7 @@ class RegisterForm extends React.Component {
                 //     email: "",
                 //     password: "",
                 // })
-                console.log(res)
+                console.log(res, "success")
             }).catch(function (error) {
                 console.log(error);
             });
