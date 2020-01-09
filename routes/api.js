@@ -5,7 +5,7 @@ const userController = require("../controllers/userController")
 
 // API Routes
 router.post("/user/register", userController.register)
-router.get("/user/signin", userController.signin)
+router.post("/user/signin", userController.signin)
 
 
 // If no API routes are hit, send the React app

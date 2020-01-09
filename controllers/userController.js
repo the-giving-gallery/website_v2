@@ -9,12 +9,16 @@ const verify = require("../routes/verifyToken")
 
 module.exports = {
 
-    findAll: function (req, res) {
+    signin:  function (req, res) {
+        console.log(req.body)
         db.User.findOne({
             where: {
-                id: 1
+                email: req.body.email
             }
-        }).then(dbUser => res.send(dbUser))
+        })
+        .then(user => {
+            res.json({user })
+        })
     },
 
 
@@ -47,16 +51,21 @@ module.exports = {
         })
     },
 
-    signin: async function (req, res) {
-        const { error } = loginValidation(req.body);
-        if (error) return res.status(400).send(error.details[0].message);
+    // signin: async function (req, res) {
+    //     await db.User.findOne({
+    //         where: {
+    //             email: req.body.email
+    //         }
+    //     }).then(dbUser => res.send(dbUser))
+        // const { error } = loginValidation(req.body);
+        // if (error) return res.status(400).send(error.details[0].message);
         // check if email is in the database
-        const user = await db.User.findOne({
-            where: {
-                email: req.body.email
-            }
-        })
-        return user;
+        // const user = await db.User.findOne({
+        //     where: {
+        //         email: req.body.email
+        //     }
+        // })
+        // return user;
         // if (!user) return res.status(400).send("email is incorrect")
 
         // // Compare password
@@ -67,5 +76,5 @@ module.exports = {
         // // Get jwt token
         // const token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET)
         // res.header("auth-token", token).send(token)
-    },
+    // },
 }

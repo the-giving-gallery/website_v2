@@ -13,8 +13,6 @@ class SignInForm extends React.Component {
         this.state = {
             email: "",
             password: "",
-            isLoginOpen: true,
-            isRegisterOpen: false
         }
     }
     handleInputChange = (e) => {
@@ -22,30 +20,17 @@ class SignInForm extends React.Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({
-            email: "",
-            password: "",
+
+        axios.post("/api/user/signin", {
+            email: this.state.email,
+            password: this.state.password
         })
-        axios.get("/api/user/signin")
             .then(res => {
                 console.log(res.data)
-                console.log("success")
             })
-    }
-    handleSignIn = () => {
-        this.setState({
-            isLoginOpen: true,
-            isRegisterOpen: false
-        })
-        console.log((this.state))
-    }
-    handleRegister = () => {
-        this.setState({
-            isLoginOpen: false,
-            isRegisterOpen: true
-        })
-        console.log((this.state))
-
+            .catch(err => {
+                console.log(err)
+            })
     }
 
 
@@ -62,7 +47,7 @@ class SignInForm extends React.Component {
                                         type="email"
                                         name="email"
                                         id="email"
-                                        placeholder="youremail@email.com"
+                                        placeholder="Email"
                                         onChange={this.handleInputChange}
                                     />
                                 </FormGroup>
@@ -74,12 +59,12 @@ class SignInForm extends React.Component {
                                         type="password"
                                         name="password"
                                         id="password"
-                                        placeholder="********"
+                                        placeholder="Password"
                                         onChange={this.handleInputChange}
                                     />
                                 </FormGroup>
                             </Col>
-                            <Button onClick={this.handleSubmit} className="m-4">Submit</Button>
+                            <Button onClick={this.handleSubmit} className="m-4">Sign In</Button>
                         </Form>
                     </Row>
                 </Container>
