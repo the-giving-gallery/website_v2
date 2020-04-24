@@ -11,7 +11,9 @@
     "dev": "nodemon server.js && (cd client & npm start)",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -22,13 +24,14 @@
   "bugs": {
     "url": "https://github.com/the-giving-gallery/website_v2/issues"
   },
-  "homepage": "https://github.com/the-giving-gallery/website_v2#readme",
+  "homepage": "https://the-giving-gallery.github.io/website_v2/",
   "dependencies": {
     "@hapi/joi": "^16.1.7",
     "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
+    "gh-pages": "^2.2.0",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
