@@ -5,41 +5,50 @@ import {
     Button, Row
 } from 'reactstrap';
 import './RegisterForm.css';
+import axios from "axios";
 
 class RegisterForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: "",
-            password: "",
-            name: "",
-        }
+    
+    state = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
     }
+
     handleInputChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({
-            email: "",
-            password: "",
-            name: "",
-
+        const route = "/api/user/register";
+        axios.post(route, {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            email: this.state.email,
+            password: this.state.password,
         })
+            .then(function (res) {
+                this.setState({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    password: "",
+                })
+            }).catch(function (error) {
+                console.log('this was an error registering ', error);
+            })
     }
-
-
 
     render() {
         return (
-            <>
                 <Container id="container">
                     <div className="registerForm">
-
                         <Row id="rowHeader" >
                             <h5 id="createHeader">
                                 Create Account
-                        </h5>
+                            </h5>
                         </Row>
                         <hr></hr>
                         <Row >
@@ -93,7 +102,6 @@ class RegisterForm extends React.Component {
                         </Row>
                     </div>
                 </Container>
-            </>
         );
     }
 }
